@@ -5,7 +5,7 @@ import (
 	"math/rand/v2"
 )
 
-const number int = 100
+const number int = 3
 
 func removeFromSliceOrdered[T any](s []T, at int) []T {
     s1 := s[:at]
@@ -36,30 +36,30 @@ func main() {
         }
 
 
-      // for {
-      //     x := rand.IntN(len(boxes))
-      //     if !boxes[x] && x != playerChoice {
-      //         boxes = removeFromSliceOrdered(boxes, x)
-      //         if playerChoice != 0 {
-      //         playerChoice -= 1
-      //         }
-      //         break
-      //     }
-      // }
-        j := 0
         for {
             x := rand.IntN(len(boxes))
             if !boxes[x] && x != playerChoice {
-                j++
                 boxes = removeFromSliceOrdered(boxes, x)
                 if playerChoice != 0 {
-                    playerChoice -= 1
+                playerChoice -= 1
                 }
-            }
-            if j > 96 {
                 break
             }
         }
+       // j := 0
+       // for {
+       //     x := rand.IntN(len(boxes))
+       //     if !boxes[x] && x != playerChoice {
+       //         j++
+       //         boxes = removeFromSliceOrdered(boxes, x)
+       //         if playerChoice != 0 {
+       //             playerChoice -= 1
+       //         }
+       //     }
+       //     if j > 96 {
+       //         break
+       //     }
+       // }
 
         for {
             newChoice := rand.IntN(len(boxes))
